@@ -7258,10 +7258,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "F:\\graduation_design\\psychological_test\\libs\\dict.js":
-/*!************************************************************!*\
-  !*** F:/graduation_design/psychological_test/libs/dict.js ***!
-  \************************************************************/
+/***/ "F:\\graduation_design\\pyschological_test_xcx\\libs\\dict.js":
+/*!****************************************************************!*\
+  !*** F:/graduation_design/pyschological_test_xcx/libs/dict.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7299,18 +7299,18 @@ var dicts = { dictArr: dictArr, getDict: getDict, getDictArr: getDictArr };
 
 /***/ }),
 
-/***/ "F:\\graduation_design\\psychological_test\\main.js":
-/*!*******************************************************!*\
-  !*** F:/graduation_design/psychological_test/main.js ***!
-  \*******************************************************/
+/***/ "F:\\graduation_design\\pyschological_test_xcx\\main.js":
+/*!***********************************************************!*\
+  !*** F:/graduation_design/pyschological_test_xcx/main.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "F:\\graduation_design\\psychological_test\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "F:\\graduation_design\\pyschological_test_xcx\\pages.json");
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "F:\\graduation_design\\psychological_test\\App.vue"));
-var _dict = _interopRequireDefault(__webpack_require__(/*! ./libs/dict.js */ "F:\\graduation_design\\psychological_test\\libs\\dict.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "F:\\graduation_design\\pyschological_test_xcx\\App.vue"));
+var _dict = _interopRequireDefault(__webpack_require__(/*! ./libs/dict.js */ "F:\\graduation_design\\pyschological_test_xcx\\libs\\dict.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.config.productionTip = false;
 
@@ -7326,44 +7326,44 @@ _vue.default.use(_dict.default);
 
 /***/ }),
 
-/***/ "F:\\graduation_design\\psychological_test\\main.js?{\"page\":\"pages%2Findex%2Findex\"}":
-/*!****************************************************************************************!*\
-  !*** F:/graduation_design/psychological_test/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \****************************************************************************************/
+/***/ "F:\\graduation_design\\pyschological_test_xcx\\main.js?{\"page\":\"pages%2Findex%2Findex\"}":
+/*!********************************************************************************************!*\
+  !*** F:/graduation_design/pyschological_test_xcx/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "F:\\graduation_design\\psychological_test\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "F:\\graduation_design\\pyschological_test_xcx\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ "F:\\graduation_design\\psychological_test\\pages\\index\\index.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ "F:\\graduation_design\\pyschological_test_xcx\\pages\\index\\index.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_index.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "F:\\graduation_design\\psychological_test\\main.js?{\"page\":\"pages%2Fquestions%2Fquestions\"}":
-/*!************************************************************************************************!*\
-  !*** F:/graduation_design/psychological_test/main.js?{"page":"pages%2Fquestions%2Fquestions"} ***!
-  \************************************************************************************************/
+/***/ "F:\\graduation_design\\pyschological_test_xcx\\main.js?{\"page\":\"pages%2Fquestions%2Fquestions\"}":
+/*!****************************************************************************************************!*\
+  !*** F:/graduation_design/pyschological_test_xcx/main.js?{"page":"pages%2Fquestions%2Fquestions"} ***!
+  \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "F:\\graduation_design\\psychological_test\\pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "F:\\graduation_design\\pyschological_test_xcx\\pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _questions = _interopRequireDefault(__webpack_require__(/*! ./pages/questions/questions.vue */ "F:\\graduation_design\\psychological_test\\pages\\questions\\questions.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _questions = _interopRequireDefault(__webpack_require__(/*! ./pages/questions/questions.vue */ "F:\\graduation_design\\pyschological_test_xcx\\pages\\questions\\questions.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_questions.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "F:\\graduation_design\\psychological_test\\pages.json":
-/*!**********************************************************!*\
-  !*** F:/graduation_design/psychological_test/pages.json ***!
-  \**********************************************************/
+/***/ "F:\\graduation_design\\pyschological_test_xcx\\pages.json":
+/*!**************************************************************!*\
+  !*** F:/graduation_design/pyschological_test_xcx/pages.json ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7372,10 +7372,10 @@ createPage(_questions.default);
 
 /***/ }),
 
-/***/ "F:\\graduation_design\\psychological_test\\static\\style\\common.css":
-/*!***********************************************************************!*\
-  !*** F:/graduation_design/psychological_test/static/style/common.css ***!
-  \***********************************************************************/
+/***/ "F:\\graduation_design\\pyschological_test_xcx\\static\\style\\common.css":
+/*!***************************************************************************!*\
+  !*** F:/graduation_design/pyschological_test_xcx/static/style/common.css ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
