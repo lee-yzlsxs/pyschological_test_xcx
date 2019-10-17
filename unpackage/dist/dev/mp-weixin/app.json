@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/questions/questions"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#628EEA",
+    "backgroundColor": "linear-gradient(#6592E8, #97B8ED)"
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap11.json"
+}

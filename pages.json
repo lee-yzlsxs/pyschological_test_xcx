@@ -1,0 +1,21 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "DISC性格测试"
+			}
+		}
+        ,{
+            "path" : "pages/questions/questions",
+            "style" : {
+				"navigationBarTitleText": "DISC简易版"
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#628EEA",
+		"backgroundColor": "linear-gradient(#6592E8, #97B8ED)"
+	}
+}
