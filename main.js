@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import dicts from './libs/dict.js'
+import utils from './libs/util.js'
 
 Vue.config.productionTip = false
 
@@ -12,3 +13,4 @@ const app = new Vue({
 app.$mount()
 
 Vue.use(dicts)
+Vue.use(utils)

@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/questions/questions"
+    "pages/questions/questions",
+    "pages/result/result",
+    "pages/result_two/result_two"
   ],
   "subPackages": [],
   "window": {
@@ -10,5 +12,5 @@
     "backgroundColor": "linear-gradient(#6592E8, #97B8ED)"
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap42.json"
+  "sitemapLocation": "sitemap76.json"
 }

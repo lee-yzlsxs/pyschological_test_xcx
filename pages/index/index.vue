@@ -52,6 +52,7 @@
 				console.log('selectedVersion', this.selectedVersion)
 				uni.navigateTo({
 					url: '../questions/questions?version=' + this.selectedVersion
+					// url: '../result/result'
 				})
 			}
 		}
