@@ -18,10 +18,6 @@
 				"navigationBarTitleText": "结果分析"
 			}
         }
-        ,{
-            "path" : "pages/result_two/result_two",
-            "style" : {}
-        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

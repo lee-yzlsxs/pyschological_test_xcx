@@ -40,9 +40,6 @@
 			selectedVersion: '1'
 		  }
 		},
-		onLoad(param) {
-			console.log('首页执行onload方法, param为---------', param)
-		},
 		methods: {
 			changeVersion (e) {
 				this.selectedVersion = e.target.value
@@ -52,7 +49,6 @@
 				console.log('selectedVersion', this.selectedVersion)
 				uni.navigateTo({
 					url: '../questions/questions?version=' + this.selectedVersion
-					// url: '../result/result'
 				})
 			}
 		}

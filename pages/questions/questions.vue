@@ -48,7 +48,6 @@
 			},
 			// 获取指定长度的数据(用于模拟问卷题目数据)
 			getLargeArr (arr, len) {
-				console.log('问题---', arr)
 				if (!arr.length) { return arr }
 				arr = this.$utils.shuffle(arr)
 				if (arr.length < len) {
@@ -66,7 +65,6 @@
 					let data = this.$utils.groupByAttr(this.answers, (element) => { // 将测试结果分组
 						return element
 					}, true)
-					console.log(data)
 					this.$dicts.getDictArr('answerTypes').forEach(element => {
 						let d = {}
 						d.name = element.content
@@ -99,7 +97,6 @@
 			}
 		},
 		onLoad(option) {
-			console.log('问卷页面执行onload,option-----', option)
 			if (option && option.version === '2') {
 				uni.setNavigationBarTitle({
 					title: 'DISC完整版'
