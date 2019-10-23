@@ -43,11 +43,14 @@
 						element.anwsers = this.$utils.shuffle(element.anwsers)
 					})
 					this.tests = param
+					console.log(this.tests)
+					console.log(this.tests.map(element => element.id))
 					uni.hideLoading()
 				}, 600)
 			},
-			// 获取指定长度的数据(获得假数据)
+			// 获取指定长度的数据(用于模拟问卷题目数据)
 			getLargeArr (arr, len) {
+				arr = this.$utils.shuffle(arr)
 				if (arr.length < len) {
 					arr = this.$utils.shuffle(arr.concat(arr)) // 打乱顺序
 					return this.getLargeArr(arr, len)

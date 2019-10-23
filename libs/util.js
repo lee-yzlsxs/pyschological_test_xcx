@@ -41,17 +41,15 @@ export const groupByAttr = (list, fn, needJson) => {
 }
 
 /**
- *  打乱数组顺序
+ *  随机打乱数组顺序
  */
 export const shuffle = (arr) => {
 	let len = arr.length
-	let randomIndex
-	let temp
-	while(len) {
-		randomIndex = Math.floor(Math.random() * (len--))
-		temp = arr[randomIndex]
-		arr[randomIndex] = arr[len]
-		arr[len] = temp
+	for (let i = 0; i<= len -1; i++) {
+		let index = parseInt(Math.random() * (len - i));
+		let temp = arr[index]
+		arr[index] = arr[len -i - 1]
+		arr[len - i - 1] = temp
 	}
 	return arr
 }
