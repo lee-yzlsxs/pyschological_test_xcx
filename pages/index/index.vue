@@ -40,8 +40,8 @@
 			selectedVersion: '1'
 		  }
 		},
-		onLoad() {
-
+		onLoad(param) {
+			console.log('首页执行onload方法, param为---------', param)
 		},
 		methods: {
 			changeVersion (e) {

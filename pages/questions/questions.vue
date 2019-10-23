@@ -30,26 +30,26 @@
 				tests: [], // 问卷数据
 				answers: [], // 用户的回答
 				len: 0, // 总共多少个问题
-				couldTap: true // 可以点击选项获取当前题目的答案(防止没有跳到下一题,当前题被点多次)
+				csData: this.$dicts.getDictArr('testData') // 可以点击选项获取当前题目的答案(防止没有跳到下一题,当前题被点多次)
 			}
 		},
 		methods: {
 			// 获得问卷数据
 			getTests (len) {
 				setTimeout(() => {
-					let param = this.$dicts.getDictArr('testData')
-					param = this.getLargeArr(param, this.len)
+					let param = JSON.parse(JSON.stringify(this.$dicts.getDictArr('testData')))
+					param = this.getLargeArr(param, this.len) // 模拟问卷数据
 					param.forEach(element => {
 						element.anwsers = this.$utils.shuffle(element.anwsers)
 					})
 					this.tests = param
-					console.log(this.tests)
-					console.log(this.tests.map(element => element.id))
 					uni.hideLoading()
 				}, 600)
 			},
 			// 获取指定长度的数据(用于模拟问卷题目数据)
 			getLargeArr (arr, len) {
+				console.log('问题---', arr)
+				if (!arr.length) { return arr }
 				arr = this.$utils.shuffle(arr)
 				if (arr.length < len) {
 					arr = this.$utils.shuffle(arr.concat(arr)) // 打乱顺序
@@ -99,6 +99,7 @@
 			}
 		},
 		onLoad(option) {
+			console.log('问卷页面执行onload,option-----', option)
 			if (option && option.version === '2') {
 				uni.setNavigationBarTitle({
 					title: 'DISC完整版'
