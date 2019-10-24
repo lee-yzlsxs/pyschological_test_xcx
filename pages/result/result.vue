@@ -27,7 +27,8 @@
 		</view>
 		<view class="qiun-text-tips">Tips：修改后点击更新图表</view>
 		<button class="qiun-button" @tap="changeData()">更新图表</button> -->
-		<buttton @tap="gotoDetail">详细解读</buttton>
+		<view style="color: #FABE2C;font-weight: 700;margin: 20upx;">您是{{res.types.join(' ')}}型, {{res.contents.join('、')}}</view>
+		<view class="btn-bottom" style="#FABE2C" @tap="gotoDetail">详细解读</view>
 	</view>
 </template>
 
@@ -41,7 +42,11 @@
 				cWidth:'',
 				cHeight:'',
 				pixelRatio:1,
-				textarea:''
+				textarea:'',
+				res: {
+					types: [],
+					contents: []
+				}
 			}
 		},
 		onLoad() {
@@ -95,6 +100,18 @@
 						pie.series = JSON.parse(r.data)
 						_self.textarea = JSON.stringify(pie);
 						_self.showPie("canvasPie",pie);
+						let maxItem = JSON.parse(r.data).sort((a, b) => {
+							return b.data - a.data
+						})[0]
+						let items = JSON.parse(r.data).filter(element => { // 被选中个数最多的数据, 可能会有多个同样个数的, 故用列表
+							return element.data === maxItem.data
+						})
+						let i = items.map(elment => elment.name) // 根据选中的数据, 获取选中的名称列表, 用于对详细答案进行过滤
+						let resDetails = JSON.parse(JSON.stringify(this.$dicts.getDictArr('resDetail'))).filter(element => { // 将数组转字符串再转数组, 防止浅拷贝修改源数据
+							return i.includes(element.label) // 过滤详细答案
+						})
+						this.res.types = i
+						this.res.contents = resDetails.map(element => element.simpleRes)
 					},
 					fail: () => {
 						uni.showToast({
@@ -147,8 +164,6 @@
 				canvaPie.touchLegend(e,{animation:true});
 			},
 			changeData(){
-				console.log('执行了changeData')
-				console.log('utils----------', this.$utils)
 				if(this.$utils.isJSON(this.textarea)){
 					let newdata=JSON.parse(this.textarea);
 					canvaPie.updateData({
@@ -183,5 +198,21 @@
 		width: 750upx;
 		height: 500upx;
 		background-color: #FFFFFF;
+	}
+	.btn-bottom{
+		background-color: #fff;
+		color: #345C9C;
+		border-radius: 15upx;
+		width: auto;
+		margin: 20upx 80upx;
+		height: 70upx;
+		font-size: 32upx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.btn-bottom:active{
+		color: #fff;
+		background-color: #45A0F4;
 	}
 </style>

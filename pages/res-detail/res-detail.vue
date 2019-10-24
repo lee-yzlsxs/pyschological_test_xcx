@@ -1,5 +1,5 @@
 <template>
-	<view class="res-detail-container vertical-section-box">
+	<view class="res-detail-container vertical-section-box" style="display: flex;flex-direction: column;">
 		<!-- <c-tabs class="section-top"> -->
 			<view class="ht-tabs section-top">
 				<view><text class="ht-tabs-title" 
@@ -9,23 +9,57 @@
 				<view><text class="ht-tabs-title"
 					:class="{'active': activeIndex==2}" @tap="activeIndex=2">工作</text></view>
 				<view><text class="ht-tabs-title"
-					:class="{'active': activeIndex==1}" @tap="activeIndex=3">有点</text></view>
+					:class="{'active': activeIndex==3}" @tap="activeIndex=3">有点</text></view>
 				<view><text class="ht-tabs-title"
-					:class="{'active': activeIndex==1}" @tap="activeIndex=4">缺点</text></view>
+					:class="{'active': activeIndex==4}" @tap="activeIndex=4">缺点</text></view>
 			</view>
 		<!-- </c-tabs> -->
-		<view class="section-middle">
-			<swiper @change="swipeChange" :current="activeIndex" duration='300' style="background-color: gray;">
-			  <swiper-item v-for="(item, index) in resDetails" :key="index" style="background: blue;height: 100%;">
-				<view class="section-middle msg-container">
-					<!-- 可能会有混合类型(disc型的选中的个数可能会有相同的) 故需要列表-->
-					<view class="msg-item" v-for="(el, i) in item" :key="i">
-						<view class="log"></view>
-						<view class="content">{{i.content}}</view>
-					</view>
-				</view>
+		<view class="section-middle" style="flex: 1;display: flex;flex-direction: column;">
+			<swiper @change="swipeChange" :current="activeIndex" duration='300' style="flex: 1;">
+			  <swiper-item style="height: 100%;">
+				  <view v-for="(item, index) in resDetails" :key="index"  class="section-middle msg-container">
+				  	<!-- 可能会有混合类型(disc型的选中的个数可能会有相同的) 故需要列表-->
+				  	<view class="msg-item" :key="i">
+				  		<view class="log"></view>
+				  		<view class="content">{{item.qgContent}}</view>
+				  	</view>
+				  </view>
 			  </swiper-item>
-			  <swiper-item style="background: #666666;height: 100%;">
+			  <swiper-item>
+				  <view v-for="(item, index) in resDetails" :key="index"  class="section-middle msg-container">
+					<!-- 可能会有混合类型(disc型的选中的个数可能会有相同的) 故需要列表-->
+					<view class="msg-item" :key="i">
+						<view class="log"></view>
+						<view class="content">{{item.workContent}}</view>
+					</view>
+				  </view>
+			  </swiper-item>
+			  <swiper-item style="height: 100%;">
+				  <view v-for="(item, index) in resDetails" :key="index"  class="section-middle msg-container">
+					<!-- 可能会有混合类型(disc型的选中的个数可能会有相同的) 故需要列表-->
+					<view class="msg-item" :key="i">
+						<view class="log"></view>
+						<view class="content">{{item.rjContent}}</view>
+					</view>
+				  </view>
+			  </swiper-item>
+			  <swiper-item>
+				  <view v-for="(item, index) in resDetails" :key="index"  class="section-middle msg-container">
+					<!-- 可能会有混合类型(disc型的选中的个数可能会有相同的) 故需要列表-->
+					<view class="msg-item" :key="i">
+						<view class="log"></view>
+						<view class="content">{{item.yd}}</view>
+					</view>
+				  </view>
+			  </swiper-item>
+			  <swiper-item>
+				  <view v-for="(item, index) in resDetails" :key="index"  class="section-middle msg-container">
+					<!-- 可能会有混合类型(disc型的选中的个数可能会有相同的) 故需要列表-->
+					<view class="msg-item" :key="i">
+						<view class="log"></view>
+						<view class="content">{{item.qd}}</view>
+					</view>
+				  </view>
 			  </swiper-item>
 			</swiper>
 		</view>
@@ -42,23 +76,7 @@
 		data() {
 			return {
 				activeIndex: 0,
-				resDetails: [
-					[
-						{ type: 1, content: 'adkjfk进啊快点发货付款'},
-						{ type: 1, content: 'adkjfk大覅随访'}
-					],
-					[
-						{ type: 1, content: '爱的风景看看请假额发'},
-						{ type: 1, content: 'adkjfk大覅随访'},
-						{ type: 1, content: 'adkjfk大覅随访'},
-						{ type: 1, content: 'adkjfk大覅随访'}
-
-					],
-					[
-						{ type: 1, content: 'adsf答复进啊快点发货付款'},
-						{ type: 1, content: 'adkjfk大覅随访'}
-					],
-				]
+				resDetails: []
 			};
 		},
 		methods: {
@@ -66,7 +84,6 @@
 				uni.getStorage({
 					key: 'res',
 					success: (r) => {
-						console.log('拿到结果数据-------', r)
 						let maxItem = JSON.parse(r.data).sort((a, b) => {
 							return b.data - a.data
 						})[0]
@@ -77,6 +94,7 @@
 						this.resDetails = JSON.parse(JSON.stringify(this.$dicts.getDictArr('resDetail'))).filter(element => { // 将数组转字符串再转数组, 防止浅拷贝修改源数据
 							return i.includes(element.label) // 过滤详细答案
 						})
+						console.log('resDetails----------', this.resDetails)
 					},
 					fail: () => {
 						uni.showToast({
