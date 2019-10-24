@@ -31,9 +31,10 @@
 				api.getQuestions({ size: len }, res => {
 					let data = res.data || []
 					data.forEach((element, index) => {
-						console.log(element.anwsers)
-						console.log(index)
 						element.anwsers = JSON.parse(element.anwsers)
+					})
+					data.forEach(element => {
+						element.anwsers = this.$utils.shuffle(element.anwsers)
 					})
 					this.tests = this.$utils.shuffle(data)
 					uni.hideLoading()
@@ -91,7 +92,7 @@
 							})
 						}
 					})
-					uni.redirectTo({
+					uni.reLaunch({
 						url: '../result/result'
 					})
 					return
