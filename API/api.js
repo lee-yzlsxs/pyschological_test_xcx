@@ -1,7 +1,7 @@
-import loginAPI from './apis/login.js'
+import questionAPI from './apis/question.js'; // 获取测试问题相关数据
 
 let API = {
-	...loginAPI
+	...questionAPI
 }
 
-export default API
+export default API;

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/img-start/img-start",
     "pages/index/index",
     "pages/questions/questions",
     "pages/result/result",

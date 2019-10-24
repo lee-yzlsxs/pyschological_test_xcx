@@ -2,14 +2,6 @@
 	<view class="container">
 		<view class="question bold mglr changeColor">{{tests[selectIndex].question}}</view>
 		<view class="answer-box mglr">
-			<!-- <radio-group @change="selectItemAnswer">
-				<label v-for="(item, index) in tests[selectIndex].anwsers || []" :key="index">
-					<view class="answer-item">
-						<radio :value="item.value" :checked="item.value === selectedVersion"></radio>
-						<text>{{item.content}}</text>
-					</view>
-				</label>
-			</radio-group> -->
 			<view class="answer-item"
 			v-for="(item, index) in tests[selectIndex].anwsers"
 			:key="index"
@@ -22,6 +14,7 @@
 </template>
 
 <script>
+	import api from "@/API/api.js"
 	export default {
 		data () {
 			return{
@@ -29,32 +22,42 @@
 				selectIndex: 0, // 当前第几个问题
 				tests: [], // 问卷数据
 				answers: [], // 用户的回答
-				len: 0, // 总共多少个问题
-				csData: this.$dicts.getDictArr('testData') // 可以点击选项获取当前题目的答案(防止没有跳到下一题,当前题被点多次)
+				len: 0 // 总共多少个问题
 			}
 		},
 		methods: {
 			// 获得问卷数据
 			getTests (len) {
-				setTimeout(() => {
-					let param = JSON.parse(JSON.stringify(this.$dicts.getDictArr('testData')))
-					param = this.getLargeArr(param, this.len) // 模拟问卷数据
-					param.forEach(element => {
-						element.anwsers = this.$utils.shuffle(element.anwsers)
+				api.getQuestions({ size: len }, res => {
+					let data = res.data || []
+					data.forEach((element, index) => {
+						console.log(element.anwsers)
+						console.log(index)
+						element.anwsers = JSON.parse(element.anwsers)
 					})
-					this.tests = param
+					this.tests = this.$utils.shuffle(data)
 					uni.hideLoading()
-				}, 600)
+				})
+				// 没连接口时,前端测试用
+				// setTimeout(() => {
+				// 	let param = JSON.parse(JSON.stringify(this.$dicts.getDictArr('testData')))
+				// 	param = this.getLargeArr(param, this.len) // 模拟问卷数据
+				// 	param.forEach(element => {
+				// 		element.anwsers = this.$utils.shuffle(element.anwsers)
+				// 	})
+				// 	this.tests = param
+				// 	uni.hideLoading()
+				// }, 600)
 			},
-			// 获取指定长度的数据(用于模拟问卷题目数据)
+			// 获取指定长度的数据(用于没连接口前模拟问卷题目数据)
 			getLargeArr (arr, len) {
-				if (!arr.length) { return arr }
-				arr = this.$utils.shuffle(arr)
-				if (arr.length < len) {
+				if (!arr.length) { return arr } // 列表为空, 不必执行
+				arr = this.$utils.shuffle(arr) // 打乱顺序
+				if (arr.length < len) { // 数据不够, 将给定的arr列表concat它自己
 					arr = this.$utils.shuffle(arr.concat(arr)) // 打乱顺序
 					return this.getLargeArr(arr, len)
 				}
-				return arr.splice(0, len)
+				return arr.splice(0, len) // 截取需要的长度的列表
 			},
 			// 选择答案
 			selectItemAnswer (item) {
@@ -98,7 +101,7 @@
 		},
 		onLoad(option) {
 			if (option && option.version === '2') {
-				uni.setNavigationBarTitle({
+				uni.setNavigationBarTitle({ // 修改顶部导航名称
 					title: 'DISC完整版'
 				})
 			}
