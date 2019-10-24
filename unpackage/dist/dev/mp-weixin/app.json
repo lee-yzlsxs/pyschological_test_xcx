@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/questions/questions",
-    "pages/result/result"
+    "pages/result/result",
+    "pages/res-detail/res-detail"
   ],
   "subPackages": [],
   "window": {

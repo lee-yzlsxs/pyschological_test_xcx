@@ -9,7 +9,7 @@
 		</view>
 		<!--#endif-->
 		<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >
-			<view class="qiun-title-dot-light">饼状图</view>
+			<!-- <view class="qiun-title-dot-light">饼状图</view> -->
 		</view>
 		<view class="qiun-charts" >
 			<!--#ifdef MP-ALIPAY -->
@@ -27,6 +27,7 @@
 		</view>
 		<view class="qiun-text-tips">Tips：修改后点击更新图表</view>
 		<button class="qiun-button" @tap="changeData()">更新图表</button> -->
+		<buttton @tap="gotoDetail">详细解读</buttton>
 	</view>
 </template>
 
@@ -160,6 +161,11 @@
 						image:'../../../static/images/alert-warning.png'
 					})
 				}
+			},
+			gotoDetail () {
+				uni.navigateTo({
+					url: '../res-detail/res-detail'
+				})
 			}
 		}
 	}

@@ -59,7 +59,7 @@
 			// 选择答案
 			selectItemAnswer (item) {
 				this.answers[this.selectIndex] = item.type
-				if (this.answers.every(element => { return element !== null})) {
+				if (this.answers.every(element => { return element !== null})) { // 所有题目都做完了
 					console.log(this.answers)
 					let param = []
 					let data = this.$utils.groupByAttr(this.answers, (element) => { // 将测试结果分组

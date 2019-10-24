@@ -18,6 +18,12 @@
 				"navigationBarTitleText": "结果分析"
 			}
         }
+        ,{
+            "path" : "pages/res-detail/res-detail",
+            "style" : {
+				"navigationBarTitleText": "详情解读"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
