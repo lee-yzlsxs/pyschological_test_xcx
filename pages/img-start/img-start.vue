@@ -27,7 +27,7 @@
 				uni.reLaunch({
 					url: '../index/index'
 				})
-			}, 100)
+			}, 1000)
 		}
 	}
 </script>

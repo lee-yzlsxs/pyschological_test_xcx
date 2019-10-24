@@ -91,7 +91,7 @@
 							})
 						}
 					})
-					uni.navigateTo({
+					uni.redirectTo({
 						url: '../result/result'
 					})
 					return
@@ -109,7 +109,7 @@
 				title: '加载中'
 			})
 			this.version = option && option.version
-			this.len = this.version === '2' ? 40 : 10
+			this.len = this.version === '2' ? 20 : 10
 			for (let i = 0; i< this.len; i++) {
 				this.answers[i] = null
 			}
