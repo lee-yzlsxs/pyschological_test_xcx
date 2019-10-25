@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/img-start/img-start",
     "pages/index/index",
     "pages/questions/questions",
     "pages/result/result",
@@ -12,5 +13,5 @@
     "backgroundColor": "linear-gradient(#6592E8, #97B8ED)"
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap2.json"
+  "sitemapLocation": "sitemap65.json"
 }

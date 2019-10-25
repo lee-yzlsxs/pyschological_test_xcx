@@ -31,9 +31,10 @@
 				api.getQuestions({ size: len }, res => {
 					let data = res.data || []
 					data.forEach((element, index) => {
-						console.log(element.anwsers)
-						console.log(index)
 						element.anwsers = JSON.parse(element.anwsers)
+					})
+					data.forEach(element => {
+						element.anwsers = this.$utils.shuffle(element.anwsers)
 					})
 					this.tests = this.$utils.shuffle(data)
 					uni.hideLoading()
@@ -91,7 +92,7 @@
 							})
 						}
 					})
-					uni.navigateTo({
+					uni.reLaunch({
 						url: '../result/result'
 					})
 					return
@@ -109,7 +110,7 @@
 				title: '加载中'
 			})
 			this.version = option && option.version
-			this.len = this.version === '2' ? 40 : 10
+			this.len = this.version === '2' ? 20 : 10
 			for (let i = 0; i< this.len; i++) {
 				this.answers[i] = null
 			}
